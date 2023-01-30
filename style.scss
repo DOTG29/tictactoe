@@ -1,7 +1,8 @@
 @mixin center() {
     display: flex;
-    text-align: center;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 body {
@@ -16,45 +17,93 @@ body {
 $gris-clair: #A8BFC9;
 $gris-moyen: #1F3641;
 $gris-noir: #1A2A33;
+$yelow:#F2B137;
+$yelow-claire:#FFC860;
+$blue-aqua: #31C3BD;
+$blue-aqua-claire:#65E9E5;
 $border-radius: 15px;
+$font-size: 18px;
 
 
 
 
 .container {
-   width: 88%;
-   height: 65%;
-   margin-left: 22.5px;
-   .pick {
-    width: 100%;
-    height: 48%;
-    background-color: $gris-moyen;
-    border-radius: $border-radius;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    .pick-player {
-        font-size: 16px;
-        color: $gris-clair;
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-    .XO {
-        width: 85%;
-        height: 72px;
-        margin-left: 25px;
+    @include center();
+    justify-content: space-around;
+    width: 87%;
+    height: 60%;
+    .pick {
+        width: 100%;
+        height: 45%;
+        background-color: $gris-moyen;
         border-radius: $border-radius;
-        background-color: $gris-noir;
-        .XO-X {
-            width: 50%;
-            height: 100%;
+        @include center();
+        .pick-player {
+            font-size: $font-size;
+        }
+        .XO {
+            width: 88%;
+            height: 41%;
+            padding: 2%;
+            background-color: $gris-noir;
+            border-radius: $border-radius;
             @include center();
-            .XO-X-img {
-                width: 32px;
-                height: 32px;
-                margin-left: 30%;
+            flex-direction: row;
+            .XO-X {
+                width: 50%;
+                height: 100%;
+                border-radius: $border-radius;
+                background-image: url(img/icon-x-grey.svg);
+                background-repeat: no-repeat;
+                background-size: 26%;
+                background-position: center;
+            }
+
+            .XO-O {
+                width: 50%;
+                height: 100%;
+                border-radius: $border-radius;
+                background-image:  url(img/icon-o-grey.svg);
+                background-repeat: no-repeat;
+                background-size: 26%;
+                background-position: center;
             }
         }
+        .rem {
+            font-size:$font-size ;
+        }
     }
-   }
+
+    .cpu {
+        width: 100%;
+        height: 14%;
+        background-color: $yelow-claire;
+        box-shadow: 0px 6px 0px 0px $yelow;
+        border-radius: $border-radius;
+        @include center();
+        .cpu-text {
+            font-size: $font-size;
+        }
+    }
+
+    .player {
+        width: 100%;
+        height: 14%;
+        background-color: $blue-aqua-claire;
+        box-shadow: 0px 6px 0px 0px $blue-aqua;
+        border-radius: $border-radius;
+        @include center();
+        .player-text {
+            font-size: $font-size;
+        }
+    }
 }
 
+
+.XO-O:hover {
+    background-color: $gris-clair;
+}
+
+.XO-X:hover {
+    background-color: $gris-clair;
+}
