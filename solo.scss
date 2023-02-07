@@ -1,0 +1,107 @@
+@mixin center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+body {
+    background-color: #1A2A33;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    @include center();
+}
+
+$gris-clair: #A8BFC9;
+$gris-moyen: #1F3641;
+$gris-noir: #1A2A33;
+$yelow:#F2B137;
+$yelow-claire:#FFC860;
+$blue-aqua: #31C3BD;
+$blue-aqua-claire:#65E9E5;
+$border-radius: 15px;
+$font-size: 18px;
+
+.container {
+    width: 87%;
+    height: 90%;
+    .head {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .turn {
+            width: 100px;
+            height: 40px;
+            background-color: $gris-moyen;
+            border-radius: $border-radius;
+            @include center();
+        }
+        .returne {
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            background-color:$gris-clair ;
+            border-radius: $border-radius;
+            @include center();
+        }
+    }
+    .partie {
+        margin-top: 70px;
+        display: grid;
+        grid-template-areas: "a a a";
+        grid-gap: 10px;
+        grid-template-rows: repeat(3,96px);
+        .casse {
+            width: 100%;
+            background-color: $gris-moyen;
+            border-radius: $border-radius;
+            &:hover {
+                background-image: url(img/icon-x-outline.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+    }
+    .point {
+        width: 100%;
+        height: 55px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 40px;
+        .point-X {
+            padding-top: 10px;
+            text-align: center;
+            width: 96px;
+            height: 100%;
+            background-color: $blue-aqua-claire;
+            border-radius: $border-radius;
+        }
+        .egaliter {
+            padding-top: 10px;
+            text-align: center;
+            width: 96px;
+            height: 100%;
+            background-color: $gris-clair;
+            border-radius: $border-radius;
+        }
+        .point-O {
+            padding-top: 10px;
+            text-align: center;
+            width: 96px;
+            height: 100%;
+            background-color: $yelow-claire;
+            border-radius: $border-radius;
+        }
+        h2 {
+            margin: 0;
+        }
+    }
+}

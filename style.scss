@@ -40,6 +40,7 @@ $font-size: 18px;
         @include center();
         .pick-player {
             font-size: $font-size;
+            color: $gris-clair;
         }
         .XO {
             width: 88%;
@@ -55,8 +56,12 @@ $font-size: 18px;
                 border-radius: $border-radius;
                 background-image: url(img/icon-x-grey.svg);
                 background-repeat: no-repeat;
-                background-size: 26%;
+                background-size: 32px;
                 background-position: center;
+                &:hover {
+                    background-image: url(img/icon-x-noir.svg);
+                    background-color: $gris-clair;
+                }
             }
 
             .XO-O {
@@ -65,12 +70,17 @@ $font-size: 18px;
                 border-radius: $border-radius;
                 background-image:  url(img/icon-o-grey.svg);
                 background-repeat: no-repeat;
-                background-size: 26%;
+                background-size: 32px;
                 background-position: center;
+                &:hover {
+                    background-image: url(img/icon-o-noir.svg);
+                    background-color: $gris-clair;
+                }
             }
         }
         .rem {
             font-size:$font-size ;
+            color: $gris-clair;
         }
     }
 
@@ -83,6 +93,10 @@ $font-size: 18px;
         @include center();
         .cpu-text {
             font-size: $font-size;
+        }
+        a {
+            text-decoration: none;
+            color: black;
         }
     }
 
@@ -100,10 +114,26 @@ $font-size: 18px;
 }
 
 
-.XO-O:hover {
-    background-color: $gris-clair;
+
+
+
+
+.cpu:active {
+    background-color: $yelow-claire;
+    box-shadow: none;
+    margin-bottom: -1%;
 }
 
-.XO-X:hover {
-    background-color: $gris-clair;
+.player:active {
+    background-color: $blue-aqua-claire;
+    box-shadow: none;
+    margin-bottom: -1%;
+}
+
+.apple {
+    width: 100%;
+    height: 100%;
+    &:hover {
+        fill: #31C3BD;
+    }
 }
